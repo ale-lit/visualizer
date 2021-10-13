@@ -1,0 +1,24 @@
+.root {
+    display: flex;
+    justify-content: center;
+}
+.root__container {
+    max-width: 800px;
+    margin-top: 50vh;
+}
+.square {
+    width: 6px;
+    height: 6px;
+    float: left;
+    /* background: rgb(228 228 228); */
+    margin: 1px;
+    border: 2px solid #6d6d6d;
+    padding: 1px;
+}
+.square_active::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #0b1961;
+    display: block;
+}

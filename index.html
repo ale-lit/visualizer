@@ -4,50 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vizu</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="root">
-    <style>
-        .root {
-            display: flex;
-            justify-content: center;
-        }
-        .root__container {
-            max-width: 800px;
-            margin-top: 50vh;
-        }
-        .square {
-            width: 6px;
-            height: 6px;
-            float: left;
-            /* background: rgb(228 228 228); */
-            margin: 1px;
-            border: 2px solid #6d6d6d;
-            padding: 1px;
-        }
-        .square_active::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            background: #0b1961;
-            display: block;
-        }
-    </style>
-
     <div class="root__container"></div>
-
-    <script>
-        let container = document.querySelector('.root__container');
-        let all = '1000';
-        let progress = '35';
-
-        for (let i = 0; i < all; i++) {
-            if (i < progress) {
-                container.innerHTML += '<span class="square square_active"></span>';
-            } else {
-                container.innerHTML += '<span class="square"></span>';
-            }
-        }
-    </script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
