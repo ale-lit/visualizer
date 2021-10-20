@@ -30,3 +30,10 @@
     background: #03ad37;
     border-color: #098801;
 }
+
+
+input {
+    border: 1px solid #c7c7c7;
+    padding: 5px;
+    border-radius: 5px;
+}

@@ -16,21 +16,21 @@ $( function() {
     });
 
     var dateFormat = "dd.mm.yy",
-        from = $( "#from" )
+        from = $("#from")
         .datepicker({
             defaultDate: "+1w",
             changeMonth: true
         })
-        .on( "change", function() {
+        .on("change", function() {
             to.datepicker("option", "minDate", getDate(this));
             startDate = $(this).datepicker("getDate");
             createVisualize();
         }),
-        to = $( "#to" ).datepicker({
+        to = $("#to").datepicker({
             defaultDate: "+1w",
             changeMonth: true
         })
-        .on( "change", function() {
+        .on("change", function() {
             from.datepicker("option", "maxDate", getDate(this));
             endDate = $(this).datepicker("getDate");
             createVisualize();
@@ -46,35 +46,30 @@ $( function() {
         
         return date;
     }
-});
 
 
-// Construct visual
-const container = document.querySelector('.root__container');
+    // Construct visual
+    function createVisualize() {
+        let all = (endDate - startDate) / (24 * 3600 * 1000);
+        let progress = (nowDate - startDate) / (24 * 3600 * 1000);
+        //alert(progress);
 
-function createVisualize() {
-    let all = (endDate - startDate) / (24 * 3600 * 1000);
-    let progress = (nowDate - startDate) / (24 * 3600 * 1000);
-    //alert(progress);
-
-    for (let i = 1; i <= all; i++) {
-        if (i <= progress) {
-            container.insertAdjacentHTML('beforeend', '<span title="' + i + '" class="square square_active"></span>');
-            //container.innerHTML += '<span class="square square_active"></span>';
-        } else {
-            container.insertAdjacentHTML('beforeend', '<span title="' + i + '" class="square"></span>');
-            //container.innerHTML += '<span class="square"></span>';
+        for (let i = 1; i <= all; i++) {
+            if (i <= progress) {
+                $('.root__container').append('<span title="' + i + '" class="square square_active"></span>');
+            } else {
+                $('.root__container').append('<span title="' + i + '" class="square"></span>');
+            }
         }
     }
-}
 
 
 
+    // FOR DEBAGGING ***********
+    function testAlert() {
+        alert((nowDate - $('#from').datepicker("getDate"))  / (24 * 3600 * 1000));
+        //alert(($('#to').datepicker("getDate") - $('#from').datepicker("getDate")) / (24 * 3600 * 1000));
+    }
+    $('#test').on('click', testAlert);
 
-// FOR DEBAGGING ***********
-let test = document.querySelector('#test');
-function testAlert() {
-    alert((nowDate - $('#from').datepicker("getDate"))  / (24 * 3600 * 1000));
-    //alert(($('#to').datepicker("getDate") - $('#from').datepicker("getDate")) / (24 * 3600 * 1000));
-}
-test.addEventListener('click', testAlert);
+});
