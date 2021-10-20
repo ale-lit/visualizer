@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Визуализатор</title>
-    <meta name="description" content="Визуализируйте любой промежуток времени!">
-    <link rel="stylesheet" href="./styles/jquery-ui.css">
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Визуализатор</title>
+  <meta name="description" content="Визуализируйте любой промежуток времени!">
+  <link rel="stylesheet" href="./styles/jquery-ui.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 </head>
+
 <body class="root">
-    <header class="header root__container">
-        <h1 class="header__title">Визуализатор</h1>
-        <p class="header__description">Лучше один раз увидеть..</p>
-    </header>
+  <header class="header root__container">
+    <h1 class="header__title">Визуализатор</h1>
+    <p class="header__description">Лучше один раз увидеть..</p>
+  </header>
 
-    <main>
-        <section class="setting root__container">
-            <h2 class="setting__title">Настройки</h2>
-            <p class="setting__description">Укажите начальную и конечную дату:</p>
-            <form action="" method="get" class="setting__form">
-                <input type="text" id="from" name="from" placeholder="--.--.----">
-                &mdash;
-                <input type="text" id="to" name="to" placeholder="--.--.----">
-            </form>
+  <main>
+    <section class="setting root__container">
+      <h2 class="setting__title">Настройки</h2>
+      <p class="setting__description">Укажите начальную и конечную дату:</p>
+      <form action="" method="get" class="setting__form">
+        <input type="text" id="from" name="from" placeholder="--.--.----">
+        &mdash;
+        <input type="text" id="to" name="to" placeholder="--.--.----">
+      </form>
+    </section>
 
-            <span id="test">test</span>
-        </section>
+    <section class="visual-block root__container"></section>
+  </main>
 
-        <section class="visual-block root__container"></section>
-    </main>
+  <footer class="footer root__container">
+    <p class="footer__copyright">2021 &copy; Литвиненко Александр</p>
+  </footer>
 
-    <script src="./scripts/jquery.js"></script>
-    <script src="./scripts/jquery-ui.js"></script>
-    <script src="./scripts/script.js"></script>
+  <script src="./scripts/jquery.js"></script>
+  <script src="./scripts/jquery-ui.js"></script>
+  <script src="./scripts/script.js"></script>
+
+
+  <span id="test" style="position: absolute; top: 10px; left: 10px;">test</span>
 </body>
+
 </html>

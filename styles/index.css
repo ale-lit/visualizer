@@ -1,0 +1,87 @@
+@import url("../vendor/fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+.root {
+  background: #f9f9f9;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+.root__container {
+  margin: 25px auto;
+  max-width: 600px;
+}
+
+.header {
+  text-align: center;
+}
+.header__title {
+  text-transform: uppercase;
+  font-size: 36px;
+}
+.header__description {
+  text-align: center;
+  background: #000;
+  color: #fff;
+  padding: 2px 0 4px;
+  font-size: 13px;
+}
+
+.visual-block {
+  display: none;
+  border: 1px solid #e6e6e6;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 0px #fff, 1px 1px 0 #fff;
+  overflow: hidden;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.setting {
+  border: 1px solid #e6e6e6;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 0px #fff, 1px 1px 0 #fff;
+}
+.setting__title {
+  padding: 0 0 20px;
+  font-size: 22px;
+}
+.setting__description {
+  text-align: center;
+}
+.setting__form {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  background: #ebedf0;
+  border: 1px solid #1b1f230f;
+  border-radius: 1px;
+}
+.square_active {
+  background: #03ad37;
+  border-color: #098801;
+}
+
+input {
+  border: 1px solid #c7c7c7;
+  padding: 6px 0;
+  border-radius: 5px;
+  width: 130px;
+  text-align: center;
+  display: inline;
+  font-size: 16px;
+  color: #4c4c4c;
+}

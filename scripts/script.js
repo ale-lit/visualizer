@@ -51,20 +51,24 @@ $( function() {
     // Construct visual
     function createVisualize() {
         if(startDate && endDate) {
-            $('.root__container').html('');
+            $('.visual-block').html('');
 
-            let all = (endDate - startDate) / (24 * 3600 * 1000);
-            let progress = (nowDate - startDate) / (24 * 3600 * 1000);
+            //let all = (endDate - startDate) / (24 * 3600 * 1000);
+            //let progress = (nowDate - startDate) / (24 * 3600 * 1000);
+
+            let all = 2000;
+            let progress = 35;
             //alert(progress);
 
             for (let i = 1; i <= all; i++) {
                 if (i <= progress) {
-                    $('.root__container').append('<span title="' + i + '" class="square square_active"></span>');
+                    $('.visual-block').append('<span title="' + i + '" class="square square_active"></span>');
                 } else {
-                    $('.root__container').append('<span title="' + i + '" class="square"></span>');
+                    $('.visual-block').append('<span title="' + i + '" class="square"></span>');
                 }
             }
-            $('.root__container').css('display', 'inline-block');
+            $(".setting").fadeOut();
+            $('.visual-block').css('display', 'flex');
         }
     }
 
