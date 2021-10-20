@@ -13,6 +13,7 @@
   flex-direction: column;
   min-height: 100vh;
   justify-content: space-between;
+  padding: 0 25px;
 }
 .root__container {
   margin: 25px auto;
@@ -34,17 +35,6 @@
   font-size: 13px;
 }
 
-.visual-block {
-  display: none;
-  border: 1px solid #e6e6e6;
-  padding: 15px;
-  border-radius: 5px;
-  box-shadow: inset 1px 1px 0px #fff, 1px 1px 0 #fff;
-  overflow: hidden;
-  flex-wrap: wrap;
-  gap: 3px;
-}
-
 .setting {
   border: 1px solid #e6e6e6;
   padding: 15px;
@@ -63,9 +53,17 @@
   padding: 20px 0;
 }
 
+.visual-block {
+    overflow: hidden;
+    max-width: 1280px;
+    max-height: calc(100vh - 190px);
+    display: none;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin: 0 auto;
+    justify-content: center;
+  }
 .square {
-  width: 16px;
-  height: 16px;
   background: #ebedf0;
   border: 1px solid #1b1f230f;
   border-radius: 1px;
