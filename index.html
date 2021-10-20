@@ -5,10 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vizu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/jquery-ui.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body class="root">
-    <div class="root__container"></div>
+<body class="root">    
+
+    <main>
+        <div class="settings">
+            <form action="" method="get">
+                <label for="from">Начало</label>
+                <input type="text" id="from" name="from">
+                <label for="to">Конец</label>
+                <input type="text" id="to" name="to">
+            </form>
+            
+            <span id="test">test</span>
+        </div>
+
+        <div class="root__container"></div>
+    </main>
+
+    <script src="./scripts/jquery.js"></script>
+    <script src="./scripts/jquery-ui.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 </html>

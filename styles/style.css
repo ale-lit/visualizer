@@ -3,6 +3,7 @@
     justify-content: center;
     background: #f9f9f9;
     margin: 0;
+    font-family: Roboto;
 }
 .root__container {
     max-width: 800px;
