@@ -5,23 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vizu</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="./styles/jquery-ui.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body class="root">    
+<body class="root">
+    <header class="header root__container">
+        <h1 class="header__title">Визуализатор</h1>
+        <p class="header__description">Лучше один раз увидеть..</p>
+    </header>
 
     <main>
-        <div class="settings">
-            <form action="" method="get">
-                <label for="from">Начало</label>
-                <input type="text" id="from" name="from">
-                <label for="to">Конец</label>
-                <input type="text" id="to" name="to">
+        <div class="setting">
+            <h2>Настройки</h2>
+            <p>Укажите начальную и конечную дату:</p>
+            <form action="" method="get" class="setting__form">
+                <input type="text" id="from" name="from" placeholder="--.--.----">
+                &mdash;
+                <input type="text" id="to" name="to" placeholder="--.--.----">
             </form>
-            
+
             <span id="test">test</span>
         </div>
 

@@ -50,16 +50,21 @@ $( function() {
 
     // Construct visual
     function createVisualize() {
-        let all = (endDate - startDate) / (24 * 3600 * 1000);
-        let progress = (nowDate - startDate) / (24 * 3600 * 1000);
-        //alert(progress);
+        if(startDate && endDate) {
+            $('.root__container').html('');
 
-        for (let i = 1; i <= all; i++) {
-            if (i <= progress) {
-                $('.root__container').append('<span title="' + i + '" class="square square_active"></span>');
-            } else {
-                $('.root__container').append('<span title="' + i + '" class="square"></span>');
+            let all = (endDate - startDate) / (24 * 3600 * 1000);
+            let progress = (nowDate - startDate) / (24 * 3600 * 1000);
+            //alert(progress);
+
+            for (let i = 1; i <= all; i++) {
+                if (i <= progress) {
+                    $('.root__container').append('<span title="' + i + '" class="square square_active"></span>');
+                } else {
+                    $('.root__container').append('<span title="' + i + '" class="square"></span>');
+                }
             }
+            $('.root__container').css('display', 'inline-block');
         }
     }
 
