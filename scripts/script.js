@@ -56,19 +56,21 @@ $( function() {
             //let all = (endDate - startDate) / (24 * 3600 * 1000);
             //let progress = (nowDate - startDate) / (24 * 3600 * 1000);
 
-            let all = 2000;
-            let progress = 35;
+            let all = 1000;
+            let progress = 55;
             
             let vBlockWidth = $(document).width() - 50 - 3;
+            if(vBlockWidth > 1227) vBlockWidth = 1227;
             let vBlockHeight = $(document).height() - 190 - 3;
-            let itemPadding = (vBlockWidth) * (vBlockHeight) / all;
-            itemPadding = ((Math.sqrt(itemPadding) + 3) / 4).toFixed(3);
+            let itemSize = (vBlockWidth) * (vBlockHeight) / all;
+            itemSize = ((Math.sqrt(itemSize - 3 - 3)) / 4).toFixed(0);
+            if(itemSize < 1) itemSize = 1;
 
             for (let i = 1; i <= all; i++) {
                 if (i <= progress) {
-                    $('.visual-block').append('<span title="' + i + '" class="square square_active" style="padding: ' + itemPadding + 'px;"></span>');
+                    $('.visual-block').append(`<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`);
                 } else {
-                    $('.visual-block').append('<span title="' + i + '" class="square" style="padding: ' + itemPadding + 'px;"></span>');
+                    $('.visual-block').append(`<span title="${i}" class="square" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`);
                 }
             }
             $('.setting').fadeOut();            

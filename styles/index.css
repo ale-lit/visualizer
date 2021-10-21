@@ -18,6 +18,7 @@
 .root__container {
   margin: 25px auto;
   max-width: 600px;
+  width: 100%;
 }
 
 .header {
@@ -33,6 +34,7 @@
   color: #fff;
   padding: 2px 0 4px;
   font-size: 13px;
+  width: 100%;
 }
 
 .setting {
@@ -54,23 +56,27 @@
 }
 
 .visual-block {
-    overflow: hidden;
-    max-width: 1280px;
-    max-height: calc(100vh - 190px);
-    display: none;
-    flex-wrap: wrap;
-    gap: 3px;
-    margin: 0 auto;
-    justify-content: center;
-  }
+  overflow: hidden;
+  width: 100%;
+  max-width: 1280px;
+  height: calc(100vh - 190px);
+  display: none;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+}
 .square {
   background: #ebedf0;
-  border: 1px solid #1b1f230f;
   border-radius: 1px;
 }
 .square_active {
-  background: #03ad37;
-  border-color: #098801;
+  background: #000;
+}
+
+.footer__copyright {
+    text-align: center;
 }
 
 input {
