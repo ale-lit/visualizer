@@ -43,24 +43,20 @@ $(function () {
     firstDay: 1,
     dateFormat: "dd.mm.yy",
     changeYear: true,
+    defaultDate: "+1w",
+    changeMonth: true
   });
 
   var dateFormat = "dd.mm.yy",
     from = $("#from")
-      .datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-      })
+      .datepicker()
       .on("change", function () {
         to.datepicker("option", "minDate", getDate(this));
         startDate = $(this).datepicker("getDate");
         if (endDate) createVisualize(startDate, endDate);
       }),
     to = $("#to")
-      .datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-      })
+      .datepicker()
       .on("change", function () {
         from.datepicker("option", "maxDate", getDate(this));
         endDate = $(this).datepicker("getDate");
