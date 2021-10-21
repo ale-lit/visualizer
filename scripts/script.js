@@ -116,9 +116,9 @@ $(function () {
       }
 
       // Display result
-
-      $(".setting").fadeOut();
-      $(".visual-block").css("display", "flex");
+      $(".setting").css('display', 'none');
+      $(".visual-block").animate({opacity: "1"}, 500);
+      //$(".visual-block").css("display", "flex");
     }
   }
 
