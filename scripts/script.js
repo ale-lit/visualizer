@@ -1,5 +1,5 @@
 // Change page size
-$('.root').css('min-height', $(document).height() + 'px');
+$(".root").css("min-height", $(document).height() + "px");
 
 // Get current time
 let nowDate = new Date();
@@ -25,6 +25,20 @@ $(function () {
       "Октябрь",
       "Ноябрь",
       "Декабрь",
+    ],
+    monthNamesShort: [
+      "Янв",
+      "Фев",
+      "Мар",
+      "Апр",
+      "Май",
+      "Июн",
+      "Июл",
+      "Авг",
+      "Сен",
+      "Окт",
+      "Ноя",
+      "Дек",
     ],
     firstDay: 1,
     dateFormat: "dd.mm.yy",
@@ -113,9 +127,9 @@ $(function () {
   }
 
   // FOR DEBAG ***********
-  let st = new Date(2021, 7, 23); 
-  let en = new Date(2022, 4, 9); 
-  $("#test").on("click", function() {
+  let st = new Date(2021, 7, 23);
+  let en = new Date(2022, 4, 9);
+  $("#test").on("click", function () {
     createVisualize(st, en);
   });
 });
