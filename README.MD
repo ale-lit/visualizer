@@ -5,7 +5,7 @@
   
 ▼ ▼ ▼
 ------------- |
-<a href="https://ale-lit.github.io/visualizer/"><img src="https://github.com/ale-lit/ale-lit/blob/main/screens/how-to-learn.jpg" alt="Визуализатор"></a>
+<a href="https://ale-lit.github.io/visualizer/"><img src="https://github.com/ale-lit/ale-lit/blob/main/screens/visualizer.jpg" alt="Визуализатор"></a>
 | <div align="center">**https://ale-lit.github.io/visualizer/**</div> |
   
 </div>
