@@ -85,13 +85,13 @@ $(function () {
       let progress = (nowDate - start) / (24 * 3600 * 1000);
 
       // test
-      //let all = 510;
-      //let progress = 29;
+      //all = 510;
+      //progress = 29;
 
       // Calculate size work area
       let vBlockWidth = $(document).width() - 50 - 3;
       if(vBlockWidth > 1227) vBlockWidth = 1227;
-      let vBlockHeight = $(document).height() - 190 - 3;
+      let vBlockHeight = $(document).height() - 190 - 13;
 
       // Calculate item size
       let itemSize = (vBlockWidth * vBlockHeight) / all;
@@ -118,7 +118,6 @@ $(function () {
       // Display result
       $(".setting").css('display', 'none');
       $(".visual-block").animate({opacity: "1"}, 500);
-      //$(".visual-block").css("display", "flex");
     }
   }
 
