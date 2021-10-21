@@ -1,3 +1,6 @@
+// Change page size
+$('.root').css('min-height', $(document).height() + 'px');
+
 // Get current time
 let nowDate = new Date();
 
@@ -110,12 +113,9 @@ $(function () {
   }
 
   // FOR DEBAG ***********
-  function testAlert() {
-
-  }
   let st = new Date(2021, 7, 23); 
   let en = new Date(2022, 4, 9); 
   $("#test").on("click", function() {
-      createVisualize(st, en);
+    createVisualize(st, en);
   });
 });
