@@ -54,12 +54,21 @@
   text-align: center;
   padding: 20px 0;
 }
+.setting__input {
+    border: 1px solid #c7c7c7;
+    padding: 6px 0;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    display: inline;
+    font-size: 16px;
+    color: #4c4c4c;
+  }
 
 .visual-block {
   overflow: hidden;
   width: 100%;
   max-width: 1280px;
-  height: calc(100vh - 190px);
   display: none;
   flex-wrap: wrap;
   gap: 3px;
@@ -77,15 +86,4 @@
 
 .footer__copyright {
     text-align: center;
-}
-
-input {
-  border: 1px solid #c7c7c7;
-  padding: 6px 0;
-  border-radius: 5px;
-  width: 100px;
-  text-align: center;
-  display: inline;
-  font-size: 16px;
-  color: #4c4c4c;
 }

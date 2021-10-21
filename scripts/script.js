@@ -24,7 +24,7 @@ $( function() {
         .on('change', function() {
             to.datepicker('option', 'minDate', getDate(this));
             startDate = $(this).datepicker('getDate');
-            createVisualize();
+            if(endDate) createVisualize(startDate, endDate);
         }),
         to = $('#to').datepicker({
             defaultDate: '+1w',
@@ -33,7 +33,7 @@ $( function() {
         .on("change", function() {
             from.datepicker('option', 'maxDate', getDate(this));
             endDate = $(this).datepicker('getDate');
-            createVisualize();
+            if(startDate) createVisualize(startDate, endDate);
         });
 
     function getDate( element ) {
@@ -49,26 +49,34 @@ $( function() {
 
 
     // Construct visual
-    function createVisualize() {
-        if(startDate && endDate) {
+    function createVisualize(start, end) {
+        if(start && end) {
+            // Clear container
             $('.visual-block').html('');
 
-            //let all = (endDate - startDate) / (24 * 3600 * 1000);
-            //let progress = (nowDate - startDate) / (24 * 3600 * 1000);
+            // Calculate number of items and progress
+            //let all = (end - start) / (24 * 3600 * 1000);
+            //let progress = (now - start) / (24 * 3600 * 1000);
 
-            let all = 1000;
-            let progress = 55;
+            // test
+            let all = 51;
+            let progress = 2;
             
-            // Calculate work area
+            // Calculate size work area
             let vBlockWidth = $(document).width() - 50 - 3;
             if(vBlockWidth > 1227) vBlockWidth = 1227;
             let vBlockHeight = $(document).height() - 190 - 3;
 
             // Calculate item size
-            let itemSize = (vBlockWidth) * (vBlockHeight) / all;
-            itemSize = (Math.sqrt(itemSize) - 3).toFixed(0);
-            if(itemSize < 1) itemSize = 1;
+            let itemSize = (vBlockWidth * vBlockHeight) / all;
+            itemSize = Math.floor(Math.sqrt(itemSize) - 3);
+            if (itemSize < 1) {
+                itemSize = 1;
+            } else if (itemSize > 50) {
+                itemSize = 50;
+            };
 
+            // Add items
             for (let i = 1; i <= all; i++) {
                 if (i <= progress) {
                     $('.visual-block').append(`<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`);
@@ -76,6 +84,8 @@ $( function() {
                     $('.visual-block').append(`<span title="${i}" class="square" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`);
                 }
             }
+
+            // Display result
             $('.setting').fadeOut();            
             $('.visual-block').css('display', 'flex');
         }
@@ -86,15 +96,9 @@ $( function() {
 
 
 
-    // FOR DEBAGGING ***********
+    // FOR DEBAG ***********
     function testAlert() {
-        //let all = 2000;
-        //alert($('.visual-block').width());
-        //alert($('.visual-block').height());
-        //let itog = (($('.visual-block').width() - 3) * ($('.visual-block').height() - 3)) / all;
-        //alert((Math.sqrt(itog) + 3) / 4);
-        //alert((nowDate - $('#from').datepicker("getDate"))  / (24 * 3600 * 1000));
-        //alert(($('#to').datepicker("getDate") - $('#from').datepicker("getDate")) / (24 * 3600 * 1000));
+
     }
     $('#test').on('click', testAlert);
 
