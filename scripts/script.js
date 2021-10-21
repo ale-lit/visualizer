@@ -84,7 +84,7 @@ $(function () {
       $(".visual-block").html("");
 
       // Calculate number of items and progress
-      let all = (end - start) / (24 * 3600 * 1000);
+      let all = (end - start) / (24 * 3600 * 1000) + 1;
       let progress = (nowDate - start) / (24 * 3600 * 1000);
 
       // test
