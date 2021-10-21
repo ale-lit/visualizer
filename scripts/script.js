@@ -50,17 +50,17 @@ $(function () {
   var dateFormat = "dd.mm.yy",
     from = $("#from")
       .datepicker()
-      .on("change", function () {
+      .on("change", function() {
         to.datepicker("option", "minDate", getDate(this));
         startDate = $(this).datepicker("getDate");
-        if (endDate) createVisualize(startDate, endDate);
+        if(endDate) createVisualize(startDate, endDate);
       }),
     to = $("#to")
       .datepicker()
-      .on("change", function () {
+      .on("change", function() {
         from.datepicker("option", "maxDate", getDate(this));
         endDate = $(this).datepicker("getDate");
-        if (startDate) createVisualize(startDate, endDate);
+        if(startDate) createVisualize(startDate, endDate);
       });
 
   function getDate(element) {
@@ -76,7 +76,7 @@ $(function () {
 
   // Construct visual
   function createVisualize(start, end) {
-    if (start && end) {
+    if(start && end) {
       // Clear container
       $(".visual-block").html("");
 
@@ -90,21 +90,21 @@ $(function () {
 
       // Calculate size work area
       let vBlockWidth = $(document).width() - 50 - 3;
-      if (vBlockWidth > 1227) vBlockWidth = 1227;
+      if(vBlockWidth > 1227) vBlockWidth = 1227;
       let vBlockHeight = $(document).height() - 190 - 3;
 
       // Calculate item size
       let itemSize = (vBlockWidth * vBlockHeight) / all;
       itemSize = Math.floor(Math.sqrt(itemSize) - 3);
-      if (itemSize < 1) {
+      if(itemSize < 1) {
         itemSize = 1;
-      } else if (itemSize > 50) {
+      } else if(itemSize > 50) {
         itemSize = 50;
       }
 
       // Add items
-      for (let i = 1; i <= all; i++) {
-        if (i <= progress) {
+      for(let i = 1; i <= all; i++) {
+        if(i <= progress) {
           $(".visual-block").append(
             `<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
           );
@@ -125,7 +125,5 @@ $(function () {
   // FOR DEBAG ***********
   let st = new Date(2021, 7, 23);
   let en = new Date(2022, 4, 9);
-  $("#test").on("click", function () {
-    createVisualize(st, en);
-  });
+  $("#test").on("click", () => createVisualize(st, en));
 });
