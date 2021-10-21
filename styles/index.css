@@ -79,8 +79,11 @@
   background: #ebedf0;
   border-radius: 1px;
 }
-.square_active {
+.square_type_active {
   background: #000;
+}
+.square_type_current {
+  background: #909090;
 }
 
 .footer__copyright {

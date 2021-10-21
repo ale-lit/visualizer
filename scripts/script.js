@@ -116,15 +116,19 @@ $(function () {
         for (let i = 1; i <= all; i++) {
           if (i <= progress) {
             $(".visual-block").append(
-              `<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
+              `<span title="${i}" class="square square_type_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
             );
-          } else {
+          } else if (i > (progress + 1)) {
             $(".visual-block").append(
               `<span title="${i}" class="square" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
             );
+          } else {
+            $(".visual-block").append(
+              `<span title="${i}" class="square square_type_current" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
+            );
           }
         }
-            
+
         // Delete loading
         $(".loading").toggle();
       }
