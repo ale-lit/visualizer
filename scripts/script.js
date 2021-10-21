@@ -68,12 +68,12 @@ $(function () {
       $(".visual-block").html("");
 
       // Calculate number of items and progress
-      //let all = (end - start) / (24 * 3600 * 1000);
-      //let progress = (now - start) / (24 * 3600 * 1000);
+      let all = (end - start) / (24 * 3600 * 1000);
+      let progress = (nowDate - start) / (24 * 3600 * 1000);
 
       // test
-      let all = 51;
-      let progress = 2;
+      //let all = 510;
+      //let progress = 29;
 
       // Calculate size work area
       let vBlockWidth = $(document).width() - 50 - 3;
@@ -103,6 +103,7 @@ $(function () {
       }
 
       // Display result
+
       $(".setting").fadeOut();
       $(".visual-block").css("display", "flex");
     }
