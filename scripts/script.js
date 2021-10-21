@@ -59,11 +59,14 @@ $( function() {
             let all = 1000;
             let progress = 55;
             
+            // Calculate work area
             let vBlockWidth = $(document).width() - 50 - 3;
             if(vBlockWidth > 1227) vBlockWidth = 1227;
             let vBlockHeight = $(document).height() - 190 - 3;
+
+            // Calculate item size
             let itemSize = (vBlockWidth) * (vBlockHeight) / all;
-            itemSize = ((Math.sqrt(itemSize - 3 - 3)) / 4).toFixed(0);
+            itemSize = (Math.sqrt(itemSize) - 3).toFixed(0);
             if(itemSize < 1) itemSize = 1;
 
             for (let i = 1; i <= all; i++) {
