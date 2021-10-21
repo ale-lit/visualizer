@@ -54,15 +54,15 @@
   padding: 20px 0;
 }
 .setting__input {
-    border: 1px solid #c7c7c7;
-    padding: 6px 0;
-    border-radius: 5px;
-    width: 100px;
-    text-align: center;
-    display: inline;
-    font-size: 16px;
-    color: #4c4c4c;
-  }
+  border: 1px solid #c7c7c7;
+  padding: 6px 0;
+  border-radius: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline;
+  font-size: 16px;
+  color: #4c4c4c;
+}
 
 .visual-block {
   width: 100%;
@@ -84,5 +84,15 @@
 }
 
 .footer__copyright {
-    text-align: center;
+  text-align: center;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background: url(./images/giphy.gif) 50% 50% no-repeat #ffffff63;
+  background-size: 50px;
 }

@@ -44,23 +44,23 @@ $(function () {
     dateFormat: "dd.mm.yy",
     changeYear: true,
     defaultDate: "+1w",
-    changeMonth: true
+    changeMonth: true,
   });
 
   var dateFormat = "dd.mm.yy",
     from = $("#from")
       .datepicker()
-      .on("change", function() {
+      .on("change", function () {
         to.datepicker("option", "minDate", getDate(this));
         startDate = $(this).datepicker("getDate");
-        if(endDate) createVisualize(startDate, endDate);
+        if (endDate) createVisualize(startDate, endDate);
       }),
     to = $("#to")
       .datepicker()
-      .on("change", function() {
+      .on("change", function () {
         from.datepicker("option", "maxDate", getDate(this));
         endDate = $(this).datepicker("getDate");
-        if(startDate) createVisualize(startDate, endDate);
+        if (startDate) createVisualize(startDate, endDate);
       });
 
   function getDate(element) {
@@ -76,7 +76,10 @@ $(function () {
 
   // Construct visual
   function createVisualize(start, end) {
-    if(start && end) {
+    if (start && end) {
+      // Add loading
+      $(".loading").toggle();
+
       // Clear container
       $(".visual-block").html("");
 
@@ -85,39 +88,51 @@ $(function () {
       let progress = (nowDate - start) / (24 * 3600 * 1000);
 
       // test
-      //all = 510;
+      //all = 30000;
       //progress = 29;
 
       // Calculate size work area
       let vBlockWidth = $(document).width() - 50 - 3;
-      if(vBlockWidth > 1227) vBlockWidth = 1227;
+      if (vBlockWidth > 1227) vBlockWidth = 1227;
       let vBlockHeight = $(document).height() - 190 - 13;
 
       // Calculate item size
       let itemSize = (vBlockWidth * vBlockHeight) / all;
       itemSize = Math.floor(Math.sqrt(itemSize) - 3);
-      if(itemSize < 1) {
+      if (itemSize < 1) {
         itemSize = 1;
-      } else if(itemSize > 50) {
+      } else if (itemSize > 50) {
         itemSize = 50;
       }
 
       // Add items
-      for(let i = 1; i <= all; i++) {
-        if(i <= progress) {
-          $(".visual-block").append(
-            `<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
-          );
-        } else {
-          $(".visual-block").append(
-            `<span title="${i}" class="square" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
-          );
-        }
+      if (all > 30000) {
+        alert("Слишком большой диапазон!");
+        // Delete loading
+        $(".loading").toggle();
+        return;
       }
+      function generateItem() {
+        for (let i = 1; i <= all; i++) {
+          if (i <= progress) {
+            $(".visual-block").append(
+              `<span title="${i}" class="square square_active" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
+            );
+          } else {
+            $(".visual-block").append(
+              `<span title="${i}" class="square" style="width: ${itemSize}px; height: ${itemSize}px;"></span>`
+            );
+          }
+        }
+            
+        // Delete loading
+        $(".loading").toggle();
+      }
+      setTimeout(generateItem, 100);
 
       // Display result
-      $(".setting").css('display', 'none');
-      $(".visual-block").animate({opacity: "1"}, 500);
+      $(".setting").css("display", "none");
+      $(".visual-block").animate({ opacity: "1" }, 500);
     }
   }
 
